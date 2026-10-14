@@ -15,7 +15,7 @@ jobs:
         with:
           gradle-version: "8.7"
       - name: Décompresser le projet
-        run: unzip -o DeVE-android.zip
+        run: for f in *.zip; do unzip -o "$f"; done
       - name: Compiler
         run: cd DeVE && gradle assembleDebug --no-daemon
       - uses: actions/upload-artifact@v4
